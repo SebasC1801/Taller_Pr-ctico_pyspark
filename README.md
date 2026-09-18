@@ -87,10 +87,9 @@ El script:
 
 ## Para el entregable final
 
-Te falta armar, además de este código y los CSV:
-- Un documento corto con las conclusiones (puedes basarte en lo que
-  imprime la consola al correr `etl_taller1.py`).
-- Subir todo a un repositorio de GitHub y poner el link en ese documento.
+- El documento corto de conclusiones está en `CONCLUSIONES.md` (incluye las
+  10 respuestas, la validación de la limpieza y el enlace al repositorio).
+- Repositorio: https://github.com/SebasC1801/Taller_Pr-ctico_pyspark
 
 ## Notas
 
