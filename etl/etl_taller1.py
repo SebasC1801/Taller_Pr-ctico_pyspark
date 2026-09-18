@@ -119,11 +119,13 @@ def main():
     # Nota: las filas con UnitPrice == 0 (2515) o negativo (2) se dejan tal cual,
     # porque forman parte del dataset oficial y quitarlas cambiaría las respuestas.
     paises_distintos = df.select("Country").distinct().count()
+    fechas_nulas = df.filter(F.col("InvoiceDate").isNull()).count()
     print("Validacion de la limpieza:")
     print(f"  Filas iniciales                    : {filas_iniciales}")
     print(f"  Tras quitar nulos (Cust/Descr)     : {filas_sin_nulos} (se quitaron {filas_iniciales - filas_sin_nulos})")
     print(f"  Tras quitar duplicados exactos     : {filas_finales} (se quitaron {filas_sin_nulos - filas_finales})")
     print(f"  Paises distintos                   : {paises_distintos}")
+    print(f"  Filas con InvoiceDate nula         : {fechas_nulas}")
 
     # La columna InvoiceDate llega del CSV ya como timestamp: pandas lo escribe
     # en formato ISO (yyyy-MM-dd HH:mm:ss) y Spark lo infiere automáticamente,

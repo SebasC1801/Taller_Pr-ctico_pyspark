@@ -114,7 +114,10 @@ Validaciones adicionales realizadas (auditoría completa):
 - `CustomerID`: sin ceros, sin negativos, sin valores corruptos.
 - `Country`: nombres bien escritos; el Reino Unido aparece exactamente como
   `"United Kingdom"` (el filtro de la pregunta 6 lo excluye por ese nombre).
-- Fechas: 100% legibles en formato ISO (`yyyy-MM-dd HH:mm:ss`).
+- Fechas: **100% legibles en formato ISO** (`yyyy-MM-dd HH:mm:ss`), 0 nulas
+  y sin mezcla de formatos DD/MM vs MM/DD: el `.xlsx` guarda `InvoiceDate`
+  como fecha nativa de Excel (datetime serial), sin texto que pueda
+  interpretarse de forma ambigua.
 - Se **documentan pero no se borran** filas con `UnitPrice == 0` (2,515),
   `UnitPrice < 0` (2) o descripciones `?`, por ser parte del dataset oficial.
 
