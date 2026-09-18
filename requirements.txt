@@ -1,0 +1,4 @@
+pyspark
+scrapy
+pandas
+openpyxl
